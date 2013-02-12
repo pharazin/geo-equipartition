@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <canvas id="canvas" width="700" height="700"></canvas>
+    <div>
+        <label for="numberOfPoints">Number of Points </label>
+        <input id="numberOfPoints" type="number">
+    </div>
+    <div>
+        <label for="clusterSize">Cluster Size</label>
+        <input id="clusterSize" type="number">
+    </div>
+    <div>
+        <select id="metric">
+            <option value="Box">Box</option>
+            <option value="Manhattan">Manhattan</option>
+            <option value="Euclidean">Euclidean</option>
+        </select>
+        <input id="allocate" type="button" value="Allocate">
+    </div>
+    <div>
+        <input id="reset" type="button" value="Reset Points">
+    </div>
+</body>
+
+<script type="text/javascript" src="./algorithm.js"></script>
+</html>
