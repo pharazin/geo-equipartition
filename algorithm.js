@@ -60,7 +60,8 @@ var Map = (function(){
                                         nearestPoints = null;
 
                                     var cluster = new Map.Cluster(),
-                                        nextNearest = null;
+                                        nextNearest = null,
+                                        i = null;
 
                                     centerOfRest = unallocatedCluster.getCenterPoint();
                                     locus = unallocatedCluster.getNearestPoints(centerOfRest, 
@@ -129,9 +130,16 @@ var Page = {'drawCanvas': function(clusters, canvas){
                                             'olive', 'purple', 'red', 
                                             'silver', 'teal', 'navy' ],
                                   ctx = canvas.getContext('2d'),
-                                  i = cluster = color = points = null;
+                                  i = null,
+                                  j = null,
+                                  cluster = null,
+                                  color = null,
+                                  points = null,
+                                  shouldRandomlyGenerate = colors.length < clusters.length;
+
                               for(i = 0; i < clusters.length; i++){
                                   cluster = clusters[i], color = colors[i]; 
+                                  if(!color) color = generateColor();
                                   //cluster = clusters[i], color = generateColor();
                                   points = cluster.points;
                                   for(j = 0; j < points.length; j++){
